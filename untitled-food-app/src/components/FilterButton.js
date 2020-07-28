@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
-import { withOrientation } from 'react-navigation';
 
 const FilterButton = () => {
     return (
@@ -12,13 +11,13 @@ const FilterButton = () => {
 
 const styles = StyleSheet.create({
     backgroundStyle: {
-        color: 'white',
         backgroundColor: 'black',
         height: 20,
-        width: 50,  
+        width: 50,
     },
     textStyle: {
-        color: 'white'
+        color: 'white',
+        alignSelf: 'center'
     }
 
 });
