@@ -29,9 +29,6 @@ npm install react-navigation-stack @react-native-community/masked-view
 
 ```
 expo r -c
-
-// To run
-npm start
 ```
 # License
 
