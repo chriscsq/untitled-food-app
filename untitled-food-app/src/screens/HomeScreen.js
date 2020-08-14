@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView, StatusBar } from 'react-native';
 import Yelp from '../api/Yelp';
 
 import FilterButton from '../components/FilterButton';
@@ -42,7 +42,7 @@ const HomeScreen = () => {
                     onTermChange={setSearchTerm}
                     onTermSubmit={searchApi}
                 />
-                <RestaurantActionContainer style={styles.restaurantContainerStyle}/>
+                <RestaurantActionContainer/>
 
                 <FilterButton style={styles.buttonFilterStyle} />
                 <Text>results: {results.length}</Text>
@@ -54,14 +54,12 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
     viewStyle: {
         flexDirection: 'column',
-        alignItems: 'center',
 
     },
     buttonFilterStyle: {
 
     },
     restaurantContainerStyle: {
-        alignItems: 'center'
     },
 });
 
