@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
 import Yelp from '../api/Yelp';
 
 import FilterButton from '../components/FilterButton';
 import SearchBar from '../components/SearchBar';
 import RestaurantOverviewCard from '../components/RestaurantOverviewCard';
-
+import RestaurantActionContainer from '../components/RestaurantActionContainer';
 const HomeScreen = () => {
 
     /* 
@@ -35,31 +35,32 @@ const HomeScreen = () => {
 
 
     return (
-        <View style={styles.viewStyle} >
-            <SearchBar 
-                term={searchTerm} 
-                onTermChange={setSearchTerm}
-                onTermSubmit={searchApi}
-            />
-            <FilterButton styles={styles.buttonFilterStyle} />
-            <RestaurantOverviewCard 
-                style={styles.restaurantCardStyle}
-            />
-            <Text>Your results are {results.length}</Text>
-        </View>
+        <SafeAreaView style={{ flex: 1}}>
+            <View style={styles.viewStyle}>
+                <SearchBar 
+                    term={searchTerm} 
+                    onTermChange={setSearchTerm}
+                    onTermSubmit={searchApi}
+                />
+                <RestaurantActionContainer style={styles.restaurantContainerStyle}/>
+
+                <FilterButton style={styles.buttonFilterStyle} />
+                <Text>results: {results.length}</Text>
+            </View>
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
     viewStyle: {
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
 
     },
     buttonFilterStyle: {
 
     },
-    restaurantCardStyle: {
+    restaurantContainerStyle: {
         alignItems: 'center'
     },
 });

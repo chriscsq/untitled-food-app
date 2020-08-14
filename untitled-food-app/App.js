@@ -7,7 +7,7 @@ const navigator = createStackNavigator({
 }, {
   initialRouteName: 'Home',
   defaultNavigationOptions: {
-    title: 'untitled-food-app'
+    headerShown: false
   }
 });
 
